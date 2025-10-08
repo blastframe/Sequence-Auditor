@@ -1,0 +1,25 @@
+<!--
+index.html
+
+Library/Application Support/Adobe/CEP/extensions/com.blastframe/index.html
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sequence Auditor</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="./CSInterface.js"></script>
+</head>
+<body>
+    <h1>Sequence Audit</h1>
+    <p id="status">Ready. Ensure Premiere Pro is running and a sequence is active.</p>
+    <div id="buttons" style="display: flex; gap: 10px; margin-bottom: 10px;">
+        <button id="audit-button">Generate Markdown Audit</button>
+    </div>
+    <button id="copy-button">Copy</button>
+    <textarea id="textArea" spellcheck="false"></textarea>
+    <script src="js/main.js"></script>
+</body>
+</html>

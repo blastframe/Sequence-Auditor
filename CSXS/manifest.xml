@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionManifest ExtensionBundleId="com.blastframe"
+                   ExtensionBundleVersion="1.0.2"
+                   ExtensionBundleName="Blastframe"
+                   Version="7.0">
+  <ExtensionList>
+    <Extension Id="com.blastframe.panel" Version="1.0.2"/>
+  </ExtensionList>
+
+  <ExecutionEnvironment>
+    <HostList>
+      <!-- Premiere Pro -->
+      <Host Name="PPRO" Version="[15.0,99.9]"/>
+    </HostList>
+    <LocaleList>
+      <Locale Code="All"/>
+    </LocaleList>
+    <RequiredRuntimeList>
+      <!-- CEP 11 for modern Premiere; adjust if needed -->
+      <RequiredRuntime Name="CSXS" Version="11.0"/>
+    </RequiredRuntimeList>
+  </ExecutionEnvironment>
+
+  <DispatchInfoList>
+    <!-- IMPORTANT: wrap DispatchInfo in an Extension element that repeats the Id -->
+    <Extension Id="com.blastframe.panel">
+      <DispatchInfo>
+        <Resources>
+          <MainPath>./index.html</MainPath>
+          <ScriptPath>./jsx/hostscript.jsx</ScriptPath>
+          <CEFCommandLine>
+            <Parameter>--allow-file-access-from-files</Parameter>
+            <Parameter>--remote-debugging-port=8088</Parameter>
+          </CEFCommandLine>
+        </Resources>
+        <Lifecycle>
+          <AutoVisible>true</AutoVisible>
+        </Lifecycle>
+        <UI>
+          <Type>Panel</Type>
+          <Menu>Sequence Auditor</Menu>
+          <Geometry>
+            <Size>
+              <Height>450</Height>
+              <Width>400</Width>
+            </Size>
+          </Geometry>
+          <Icons/>
+        </UI>
+      </DispatchInfo>
+    </Extension>
+  </DispatchInfoList>
+</ExtensionManifest>
